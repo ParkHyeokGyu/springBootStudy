@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+		<h1>사원 목록</h1>
+		<table border="1" bordercolor="black">
+			<tr>
+				<th>사번</th>
+				<th>이름</th>
+				<th>직위</th>
+				<th>급여</th>
+				<th>부서번호</th>
+				<th>날짜</th>
+			</tr>
+			<tr th:each="vo:${list}">
+				<td th:text="${vo.empno}"></td>
+				<td th:text="${vo.ename}"></td>
+				<td th:text="${vo.job}"></td>
+				<td th:text="${vo.sal}"></td>
+				<td th:text="${vo.deptno}"></td>
+				<td th:text="${vo.hiredate}"></td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>
