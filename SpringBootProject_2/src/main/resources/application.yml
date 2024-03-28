@@ -1,0 +1,25 @@
+#application.properties -> application.yml changed
+#port
+server:
+  port: 80
+#database
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: hr
+    password: happy
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+    cache: false
+#mybatis
+mybatis:
+  config: classpath:config.xml
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.sist.web.vo
+#thymeleaf
+
+#jpa
