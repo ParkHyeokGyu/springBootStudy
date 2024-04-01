@@ -27,12 +27,12 @@ public interface FoodDAO extends JpaRepository<Food, Integer> {
 	public Food findByFno(int fno);
 	@Query(value = "SELECT * "
 			+ "FROM food_house "
-			+ "WHERE address LIKE CONCAT('%',:address,'%') "
+			+ "WHERE address LIKE CONCAT('%',:fd,'%') "
 			+ "ORDER BY fno "
 			+ "LIMIT :start,20",nativeQuery = true)
-	public List<Food> foodFindData(@Param("address") String address,@Param("start") int start);
+	public List<Food> foodFindData(@Param("fd") String address,@Param("start") int start);
 	@Query(value = "SELECT COUNT(*) "
 			+ "FROM food_house "
-			+ "WHERE address LIKE CONCAT('%',:address,'%')",nativeQuery = true)
-	public int foodFindTotalCount(@Param("address") String address);
+			+ "WHERE address LIKE CONCAT('%',:fd,'%')",nativeQuery = true)
+	public int foodFindTotalCount(@Param("fd") String address);
 }
